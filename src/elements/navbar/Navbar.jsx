@@ -1,22 +1,44 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import {
-    ArrowPathIcon,
-    Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
-    XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { PencilIcon, LinkIcon, MicrophoneIcon, ClipboardDocumentCheckIcon, FaceSmileIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+    {
+        name: 'Text To Speech',
+        description:
+            'akes text & languages code and returns as .mp3 format',
+        icon: MicrophoneIcon,
+        href: ''
+    },
+    {
+        name: 'Article Extraction from URL',
+        description:
+            'Extract important data from news sources like title, text, summary, keywords, authors, main image, all images, links, etc.',
+        icon: LinkIcon,
+        href: ''
+    },
+    {
+        name: 'Extract Text From Files',
+        description:
+            'csv, doc, docx, eml, epub, json, html, htm, msg, odt, pdf, pptx, ps, rtf, txt, xls, xlsx, gif, jpg, jpeg, png, tiff, tif, mp3, ogg, wav',
+        icon: ClipboardDocumentCheckIcon,
+        href: ''
+    },
+    {
+        name: 'Summarize Text',
+        description:
+            'Summarize a long article, story, etc.',
+        icon: PencilIcon,
+        href: ''
+    },
+    {
+        name: 'Sentiment Analysis',
+        description:
+            'Sentiment analysis is the use of natural language processing to systematically identify and extract subjective information.',
+        icon: FaceSmileIcon,
+        href: ''
+    },
 ]
 const callsToAction = [
     { name: 'Watch demo', href: '#', icon: PlayCircleIcon },

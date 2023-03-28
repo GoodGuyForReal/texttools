@@ -1,29 +1,35 @@
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { PencilIcon, LinkIcon, MicrophoneIcon, ClipboardDocumentCheckIcon, FaceSmileIcon } from '@heroicons/react/24/outline'
 
 const features = [
     {
-        name: 'Push to deploy',
+        name: 'Text To Speech',
         description:
-            'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-        icon: CloudArrowUpIcon,
+            'akes text & languages code and returns as .mp3 format',
+        icon: MicrophoneIcon,
     },
     {
-        name: 'SSL certificates',
+        name: 'Article Extraction from URL',
         description:
-            'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-        icon: LockClosedIcon,
+            'Extract important data from news sources like title, text, summary, keywords, authors, main image, all images, links, etc.',
+        icon: LinkIcon,
     },
     {
-        name: 'Simple queues',
+        name: 'Extract Text From Files',
         description:
-            'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-        icon: ArrowPathIcon,
+            'csv, doc, docx, eml, epub, json, html, htm, msg, odt, pdf, pptx, ps, rtf, txt, xls, xlsx, gif, jpg, jpeg, png, tiff, tif, mp3, ogg, wav',
+        icon: ClipboardDocumentCheckIcon,
     },
     {
-        name: 'Advanced security',
+        name: 'Summarize Text',
         description:
-            'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-        icon: FingerPrintIcon,
+            'Summarize a long article, story, etc.',
+        icon: PencilIcon,
+    },
+    {
+        name: 'Sentiment Analysis',
+        description:
+            'Sentiment analysis is the use of natural language processing to systematically identify and extract subjective information.',
+        icon: FaceSmileIcon,
     },
 ]
 
@@ -57,7 +63,7 @@ export default function Feature() {
                     </dl>
                 </div>
             </div>
-            
+
         </div>
     )
 }

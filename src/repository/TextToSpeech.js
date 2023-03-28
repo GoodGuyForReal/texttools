@@ -7,7 +7,7 @@ export const TextToAudio = async (text, setAudio) => {
         url: 'https://text-to-speech53.p.rapidapi.com/',
         headers: {
             'content-type': 'application/json',
-            'X-RapidAPI-Key': process.env.REACT_APP_TEXT_TO_SPEECH,
+            'X-RapidAPI-Key': process.env.REACT_APP_TOOL_API,
             'X-RapidAPI-Host': 'text-to-speech53.p.rapidapi.com'
         },
         data: {"text":`${text}`,"lang":"en","format":"wav"}

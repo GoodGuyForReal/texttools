@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import { PencilIcon, LinkIcon, MicrophoneIcon, ClipboardDocumentCheckIcon, FaceSmileIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { Link } from 'react-router-dom'
 
 const products = [
     {
@@ -9,14 +10,14 @@ const products = [
         description:
             'akes text & languages code and returns as .mp3 format',
         icon: MicrophoneIcon,
-        href: ''
+        href: '/texttospeech'
     },
     {
         name: 'Article Extraction from URL',
         description:
             'Extract important data from news sources like title, text, summary, keywords, authors, main image, all images, links, etc.',
         icon: LinkIcon,
-        href: ''
+        href: '/articlebyurl'
     },
     {
         name: 'Extract Text From Files',
@@ -56,10 +57,10 @@ export default function Navbar() {
         <header className="fixed z-50 top-0 left-0 right-0">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="flex lg:hidden">
                     <button
@@ -98,10 +99,10 @@ export default function Navbar() {
                                                 <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                                             </div>
                                             <div className="flex-auto">
-                                                <a href={item.href} className="block font-semibold text-gray-900">
+                                                <Link to={item.href} className="block font-semibold text-gray-900">
                                                     {item.name}
                                                     <span className="absolute inset-0" />
-                                                </a>
+                                                </Link>
                                                 <p className="mt-1 text-gray-600">{item.description}</p>
                                             </div>
                                         </div>
@@ -124,13 +125,7 @@ export default function Navbar() {
                     </Popover>
 
                     <a href="#" className="text-sm font-semibold leading-6 text-white">
-                        Features
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-white">
-                        Marketplace
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-white">
-                        Company
+                        About
                     </a>
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">

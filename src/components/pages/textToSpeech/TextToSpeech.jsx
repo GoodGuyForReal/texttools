@@ -5,16 +5,15 @@ const TextToSpeech = () => {
     const [text, setText] = useState('')
     const [audio, setAudio] = useState()
 
-    const textToAudio = async (event) => {
+    const textToAudioHandler = async (event) => {
         event.preventDefault()
         await TextToAudio(text, setAudio)
     }
     console.log(audio);
 
-
     return (
         <div className='bg-slate-900 h-screen flex flex-col justify-center'>
-            <form onSubmit={textToAudio}>
+            <form onSubmit={textToAudioHandler}>
                 <div className="col-span-full">
                     <label htmlFor="about" className="block text-sm font-medium leading-6 text-white">
                         Write a Text that you want to convert audio

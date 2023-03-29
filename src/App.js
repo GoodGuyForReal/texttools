@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<PageNotFound />} />
         <Route path="/texttospeech" element={<TextToSpeech />} />
-        <Route path="/articlebyurl" element={<ArticleByURL />} />
+        <Route path="/imagetotext" element={<ArticleByURL />} />
 
 
       </Routes>

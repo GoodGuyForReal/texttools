@@ -13,18 +13,11 @@ const products = [
         href: '/texttospeech'
     },
     {
-        name: 'Article Extraction from URL',
-        description:
-            'Extract important data from news sources like title, text, summary, keywords, authors, main image, all images, links, etc.',
-        icon: LinkIcon,
-        href: '/articlebyurl'
-    },
-    {
         name: 'Extract Text From Files',
         description:
             'csv, doc, docx, eml, epub, json, html, htm, msg, odt, pdf, pptx, ps, rtf, txt, xls, xlsx, gif, jpg, jpeg, png, tiff, tif, mp3, ogg, wav',
         icon: ClipboardDocumentCheckIcon,
-        href: ''
+        href: '/imagetotext'
     },
     {
         name: 'Summarize Text',
@@ -54,8 +47,8 @@ export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="fixed z-50 top-0 left-0 right-0">
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <header className="fixed z-50 top-0 left-0 right-0 border-b border-b-slate-500 backdrop-blur-lg">
+            <nav className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>

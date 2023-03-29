@@ -1,4 +1,4 @@
-import { PencilIcon, LinkIcon, MicrophoneIcon, ClipboardDocumentCheckIcon, FaceSmileIcon } from '@heroicons/react/24/outline'
+import { PencilIcon,  MicrophoneIcon, ClipboardDocumentCheckIcon, FaceSmileIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 
 const features = [
@@ -10,18 +10,11 @@ const features = [
         href: '/texttospeech'
     },
     {
-        name: 'Article Extraction from URL',
-        description:
-            'Extract important data from news sources like title, text, summary, keywords, authors, main image, all images, links, etc.',
-        icon: LinkIcon,
-        href: '/articlebyurl'
-    },
-    {
         name: 'Extract Text From Files',
         description:
             'csv, doc, docx, eml, epub, json, html, htm, msg, odt, pdf, pptx, ps, rtf, txt, xls, xlsx, gif, jpg, jpeg, png, tiff, tif, mp3, ogg, wav',
         icon: ClipboardDocumentCheckIcon,
-        href: ''
+        href: '/imagetotext'
     },
     {
         name: 'Summarize Text',
@@ -43,9 +36,9 @@ export default function Feature() {
     return (
         <div className="bg-slate-900 py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:text-center">
+                <div className="mx-auto max-w-4xl lg:text-center">
                     <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                         Everything you need to deploy your app
                     </p>
                     <p className="mt-6 text-lg leading-8 text-slate-400">

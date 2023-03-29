@@ -13,8 +13,6 @@ const Home = () => {
                 <About />
                 <Cta />
             </div>
-
-
         </div>
     )
 }

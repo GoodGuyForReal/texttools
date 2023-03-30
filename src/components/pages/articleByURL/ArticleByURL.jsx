@@ -8,9 +8,15 @@ import ArticleByURLMain from './components/ArticleByURLMain'
 const ArticleByURL = () => {
     const [imageURL, setImageURL] = useState('')
     const [newArticle, setnewArticle] = useState()
+    const [isLoading, setisLoading] = useState(false)
+
+    useEffect(() => {
+        setisLoading(false)
+    }, [newArticle]);
 
     const articleURL = async (e) => {
         e.preventDefault()
+        setisLoading(true)
         const getArticle = await ImageToTextByURL(imageURL)
         const newText = extractData(getArticle.text)
         setnewArticle(newText)
@@ -30,9 +36,9 @@ const ArticleByURL = () => {
                     <p className='text-base leading-7 text-slate-400 text-center'>Extract valuable information from images with our image recognition feature. Simply input the image URL, and our tool will extract specific data such as email addresses, phone numbers, length, dates, times, and prices.</p>
                 </div>
 
-                <form onSubmit={articleURL} className='w-full flex justify-center gap-5'>
+                <form onSubmit={articleURL} className='w-full flex flex-col items-center justify-center'>
 
-                    <div className="max-w-xl w-full">
+                    <div className="max-w-xl w-full flex flex-col items-center justify-center gap-5">
                         <input
                             value={imageURL}
                             onChange={(e) => setImageURL(e.target.value)}
@@ -40,9 +46,19 @@ const ArticleByURL = () => {
                             className="w-full bg-white rounded-md flex-1 border-0 bg-transparent py-3 pl-3 text-slate-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 focus:scale-110 duration-200"
                             placeholder="Enter a URL"
                         />
-                    </div>
 
-                    {/* <input type="submit" value="Get Article" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" /> */}
+
+                        {!isLoading ? <input type="submit"
+                            value={'Convert'}
+                            className="rounded-md w-full cursor-pointer bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        />
+                            :
+                            <input
+                                value={'Loading...'}
+                                className="rounded-md  w-full cursor-pointer bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                            />
+                        }
+                    </div>
                 </form>
             </div>
 

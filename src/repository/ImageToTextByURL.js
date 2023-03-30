@@ -15,7 +15,3 @@ export const ImageToTextByURL = async (url) => {
   console.log(getImageText.data);
   return getImageText.data
 }
-
-
-
-

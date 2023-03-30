@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import BgBlurSvg from '../../../assets/BgBlurSvg'
 import BgBlurSvgTop from '../../../assets/BgBlurSvgTop'
 import { TextToAudio } from '../../../repository/TextToSpeech'
@@ -6,12 +6,18 @@ import { TextToAudio } from '../../../repository/TextToSpeech'
 const TextToSpeech = () => {
     const [text, setText] = useState('')
     const [audio, setAudio] = useState()
+    const [isLoading, setisLoading] = useState(false)
+
+    useEffect(() => {
+        setisLoading(false)
+    }, [audio]);
 
     const textToAudioHandler = async (event) => {
         event.preventDefault()
+        setisLoading(true)
         await TextToAudio(text, setAudio)
+        console.log(audio);
     }
-    console.log(audio);
 
     return (
         <div className='TextToSpeech relative isolate min-h-screen overflow-y-hidden bg-slate-900 flex flex-col items-center py-32 gap-10 '>
@@ -30,10 +36,17 @@ const TextToSpeech = () => {
                             placeholder='Write smth'
                             onChange={(e) => setText(e.target.value)}
                         />
-                        <input type="submit"
+                        {!isLoading ? <input type="submit"
                             value={'Convert'}
                             className="rounded-md cursor-pointer bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                         />
+                            :
+                            <input
+                                value={'Loading...'}
+                                className="rounded-md cursor-pointer bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                            />
+                        }
+
                     </div>
                 </form>
 

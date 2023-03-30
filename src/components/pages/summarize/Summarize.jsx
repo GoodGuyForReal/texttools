@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BgBlurSvg from '../../../assets/BgBlurSvg'
 import BgBlurSvgTop from '../../../assets/BgBlurSvgTop'
+import { Summarizer } from '../../../repository/Summarizer'
 
 const Summarize = () => {
+    const [text, setText] = useState('')
+    const [newText, setNewText] = useState('')
 
+    const sendNewSummarizer = async (event) => {
+        event.preventDefault()
+        const getNewSummarizedText = await Summarizer(text)
+        setNewText(getNewSummarizedText.summary)
+    }
 
-
-
-
+    console.log(newText);
 
     return (
         <div className='Summarize relative isolate min-h-screen overflow-y-hidden bg-slate-900 flex flex-col items-center py-32 gap-10 '>
@@ -20,15 +26,14 @@ const Summarize = () => {
                 </div>
             </div>
 
-            <div className='SummarizeMain flex  gap-5 max-w-7xl w-full'>
-                <div className='form w-1/2'>
-                    <form onSubmit={''} className=' w-full'>
+            <div className='SummarizeMain flex flex-col px-5 gap-5 max-w-7xl w-full md:flex-row'>
+                <div className='form w-full md:w-1/2'>
+                    <form onSubmit={sendNewSummarizer} className=' w-full'>
                         <div className="flex flex-col gap-5 w-full">
                             <textarea
-                                value={''}
                                 className="block w-full rounded-md border-0 text-gray-900 h-[90vh] p-3 resize-none"
                                 placeholder='Write smth'
-                                onChange={''}
+                                onChange={(e) => setText(e.target.value)}
                             />
                             <input type="submit"
                                 value={'Convert'}
@@ -38,12 +43,12 @@ const Summarize = () => {
                     </form>
                 </div>
 
-                <div className='w-1/2'>
+                <div className='w-full md:w-1/2'>
                     <textarea
-                        value={''}
+                        readOnly
+                        defaultValue={newText}
                         className="block w-full rounded-md border-0 text-gray-900 h-[90vh] p-3 resize-none"
                         placeholder='Result will be here and editible'
-                        onChange={''}
                     />
                 </div>
 

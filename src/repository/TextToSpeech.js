@@ -10,7 +10,7 @@ export const TextToAudio = async (text, setAudio) => {
             'X-RapidAPI-Key': process.env.REACT_APP_TOOL_API,
             'X-RapidAPI-Host': 'text-to-speech53.p.rapidapi.com'
         },
-        data: {"text":`${text}`,"lang":"en","format":"wav"}
+        data: { "text": `${text}`, "lang": "en", "format": "wav" }
     };
 
     axios.request(options).then(function (response) {

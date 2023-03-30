@@ -19,17 +19,6 @@ const ArticleByURL = () => {
 
     console.log(newArticle);
 
-    // const mock = {
-    //     date: ['Saturday'],
-    //     emails: ['stancoop@gmail.com', 'emcasarosa82@gmail.com'],
-    //     lengths: [],
-    //     phones: ['555-919-4889'],
-    //     prices: [],
-    //     text: "\r\n\r\nPhotography Studio Grand Opening!\r\nTo stancoop@gmail.com * Juanita Casarosa *\r\nGeorge Casarosa *\r\nCc Bcc\r\nPhotography Studio Grand Opening!\r\nHi Everyone,\r\nI have very exciting news for you! This Saturday will be the grand opening of my new studio, EC Photography! I'd love it if you guys could come. It will be from 10:00 to 4:00. There will be entertainment and lots of food, so come out and enjoy the festivities!\r\nHope to see you there!\r\nElena Casarosa\r\nEC Photography Studio 555-919-4889\r\nemcasarosa82@gmail.com\r\nSans Serif TBI U A\r\nT\r\nSend\r\nA\r\n$ O\r\nG\r\nSaved",
-    //     time: ['10:00', '4:00'],
-    //     imgUrl: "https://media.gcflearnfree.org/content/55e075127dd48174331f5212_01_17_2014/basics_compose_lg.jpg"
-    // }
-
     return (
         <div className='ArticleByURL flex flex-col gap-20 bg-slate-900 relative isolate min-h-screen overflow-y-hidden py-32 '>
 

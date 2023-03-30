@@ -14,7 +14,7 @@ const TextToSpeech = () => {
     console.log(audio);
 
     return (
-        <div className='TextToSpeech relative isolate min-h-screen overflow-y-hidden bg-slate-900 flex flex-col justify-center items-center gap-10'>
+        <div className='TextToSpeech relative isolate min-h-screen overflow-y-hidden bg-slate-900 flex flex-col items-center py-32 gap-10 '>
             <div className='ArticleByURLHeader flex flex-col gap-10 items-center max-w-3xl w-full'>
                 <h1 className="block text-5xl font-bold text-white">
                     Text to Audio

@@ -20,14 +20,14 @@ const features = [
         description:
             'Our text summarizer feature quickly summarizes lengthy articles or reports, saving you time and effort.',
         icon: PencilIcon,
-        href: ''
+        href: '/summarize'
     },
     {
-        name: 'Sentiment Analysis',
+        name: 'Paraphraser',
         description:
             'Sentiment analysis is the use of natural language processing to systematically identify and extract subjective information.',
         icon: FaceSmileIcon,
-        href: ''
+        href: '/paraphraser'
     },
 ]
 

@@ -10,7 +10,7 @@ const Home = () => {
             <div className='HeroSection bg-slate-900'>
                 <Hero />
                 <Feature />
-                <About />
+                {/* <About /> */}
                 <Cta />
             </div>
         </div>

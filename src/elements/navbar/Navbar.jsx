@@ -15,19 +15,19 @@ const products = [
     {
         name: 'Extract Text From Files',
         description:
-            'csv, doc, docx, eml, epub, json, html, htm, msg, odt, pdf, pptx, ps, rtf, txt, xls, xlsx, gif, jpg, jpeg, png, tiff, tif, mp3, ogg, wav',
+            'Extract valuable information from images with our image recognition feature. Our tool will extract specific datas also the text',
         icon: ClipboardDocumentCheckIcon,
         href: '/imagetotext'
     },
     {
         name: 'Summarize Text',
         description:
-            'Summarize a long article, story, etc.',
+            'Our text summarizer feature quickly summarizes lengthy articles or reports, saving you time and effort.',
         icon: PencilIcon,
-        href: ''
+        href: '/summarize'
     },
     {
-        name: 'Sentiment Analysis',
+        name: 'Paraphraser',
         description:
             'Sentiment analysis is the use of natural language processing to systematically identify and extract subjective information.',
         icon: FaceSmileIcon,
@@ -86,7 +86,7 @@ export default function Navbar() {
                                     {products.map((item) => (
                                         <div
                                             key={item.name}
-                                            className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                                            className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-purple-100 duration-200"
                                         >
                                             <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                                 <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />

@@ -16,14 +16,14 @@ export default function Cta() {
               </radialGradient>
             </defs>
           </svg>
-          <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-16 lg:text-left">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
               Boost your productivity.
               <br />
-              Start using our app today.
+              Get Started Today
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-500">
-              Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
+              Try out our powerful text tools today and see how they can help you work more efficiently. With just a few clicks, you can transform text into speech, summarize long articles, and extract valuable information from images.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <a

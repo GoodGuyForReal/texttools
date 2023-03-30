@@ -8,11 +8,11 @@ export const extractData = (text) => {
     const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
     const timeRegex = /([01]?[0-9]|2[0-3]):[0-5][0-9](?::[0-5][0-9])?(?:\s*[ap]\.?m\.?)?/gi;
 
-    const prices = text.match(priceRegex) || [];
-    const lengths = text.match(lengthRegex) || [];
-    const phones = text.match(phoneRegex) || [];
-    const emails = text.match(emailRegex) || [];
-    const date = text.match(dateRegex) || [];
-    const time = text.match(timeRegex) || [];
+    const prices = text.match(priceRegex) || null;
+    const lengths = text.match(lengthRegex) || null;
+    const phones = text.match(phoneRegex) || null;
+    const emails = text.match(emailRegex) || null;
+    const date = text.match(dateRegex) || null;
+    const time = text.match(timeRegex) || null;
     return { prices, lengths, phones, emails, date, time, text };
 }

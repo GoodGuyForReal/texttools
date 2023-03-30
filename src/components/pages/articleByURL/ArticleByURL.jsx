@@ -22,10 +22,14 @@ const ArticleByURL = () => {
     return (
         <div className='ArticleByURL flex flex-col gap-20 bg-slate-900 relative isolate min-h-screen overflow-y-hidden py-32 '>
 
-            <div className='ArticleByURLHeader flex flex-col gap-10 items-center'>
-                <h1 className="block text-5xl font-bold text-white">
-                    Extract Text
-                </h1>
+            <div className='ArticleByURLHeader flex flex-col gap-10 items-center '>
+                <div className='max-w-3xl text-center flex flex-col gap-5'>
+                    <h1 className="block text-5xl font-bold text-white">
+                        Extract Text From Image
+                    </h1>
+                    <p className='text-base leading-7 text-slate-400 text-center'>Extract valuable information from images with our image recognition feature. Simply input the image URL, and our tool will extract specific data such as email addresses, phone numbers, length, dates, times, and prices.</p>
+                </div>
+
                 <form onSubmit={articleURL} className='w-full flex justify-center gap-5'>
 
                     <div className="max-w-xl w-full">

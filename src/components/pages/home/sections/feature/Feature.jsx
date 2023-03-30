@@ -1,25 +1,24 @@
-import { PencilIcon,  MicrophoneIcon, ClipboardDocumentCheckIcon, FaceSmileIcon } from '@heroicons/react/24/outline'
+import { PencilIcon, MicrophoneIcon, ClipboardDocumentCheckIcon, FaceSmileIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 
 const features = [
     {
         name: 'Text To Speech',
-        description:
-            'akes text & languages code and returns as .mp3 format',
+        description: 'Turn any text into speech with our text-to-speech feature. Listen to articles and documents without having to read them.',
         icon: MicrophoneIcon,
         href: '/texttospeech'
     },
     {
-        name: 'Extract Text From Files',
+        name: 'Extract Text From Image',
         description:
-            'csv, doc, docx, eml, epub, json, html, htm, msg, odt, pdf, pptx, ps, rtf, txt, xls, xlsx, gif, jpg, jpeg, png, tiff, tif, mp3, ogg, wav',
+            'Extract valuable information from images with our image recognition feature. Our tool will extract specific datas also the text',
         icon: ClipboardDocumentCheckIcon,
         href: '/imagetotext'
     },
     {
         name: 'Summarize Text',
         description:
-            'Summarize a long article, story, etc.',
+            'Our text summarizer feature quickly summarizes lengthy articles or reports, saving you time and effort.',
         icon: PencilIcon,
         href: ''
     },
@@ -39,11 +38,10 @@ export default function Feature() {
                 <div className="mx-auto max-w-4xl lg:text-center">
                     <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
                     <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                        Everything you need to deploy your app
+                        Text Tools to Simplify Your Work
                     </p>
                     <p className="mt-6 text-lg leading-8 text-slate-400">
-                        Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-                        pulvinar et feugiat blandit at. In mi viverra elit nunc.
+                    Our text tools simplify your text-related tasks, saving you time and effort. With features like text-to-speech and text summarization, you can work smarter, not harder.
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

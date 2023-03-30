@@ -16,10 +16,12 @@ const TextToSpeech = () => {
     return (
         <div className='TextToSpeech relative isolate min-h-screen overflow-y-hidden bg-slate-900 flex flex-col items-center py-32 gap-10 '>
             <div className='ArticleByURLHeader flex flex-col gap-10 items-center max-w-3xl w-full'>
-                <h1 className="block text-5xl font-bold text-white">
-                    Text to Audio
-                </h1>
-
+                <div className='w-full text-center flex flex-col gap-5'>
+                    <h1 className="block text-5xl font-bold text-white">
+                        Text To Speech
+                    </h1>
+                    <p className='text-base leading-7 text-slate-400 text-center'>Turn any text into speech with our text-to-speech feature. Listen to articles, documents, or anything else you need to hear without having to read it.</p>
+                </div>
                 <form onSubmit={textToAudioHandler} className=' w-full'>
                     <div className="flex flex-col gap-5 w-full">
                         <textarea

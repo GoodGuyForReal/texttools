@@ -1,6 +1,18 @@
-const ArticleByURLMain = ({ newArticle }) => {
+import { useEffect, useState } from "react";
 
+const ArticleByURLMain = ({ newArticle }) => {
+    const [height, setHeight] = useState('auto');
+    const [content, setContent] = useState('');
     console.log(newArticle.lengths);
+
+
+    useEffect(() => {
+        setContent(newArticle.text)
+        const textarea = document.getElementById('ImgToTextResultTextArea');
+        textarea.style.height = 'auto';
+        textarea.style.height = `${textarea.scrollHeight}px`;
+        setHeight(`${textarea.scrollHeight}px`);
+    }, [content, newArticle.text]);
 
     return (
         <div className='ArticleByURLMainBody'>
@@ -39,7 +51,7 @@ const ArticleByURLMain = ({ newArticle }) => {
                                 </div>}
 
                             {newArticle.time &&
-                                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">Times</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                                         {newArticle.time.map((item, id) => (<p key={id}>{item}</p>))}
@@ -55,7 +67,7 @@ const ArticleByURLMain = ({ newArticle }) => {
                                 </div>}
 
                             {newArticle.lengths &&
-                                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">Length</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                                         {newArticle.lengths.map((item, id) => (<p key={id}>{item}</p>))}
@@ -65,7 +77,13 @@ const ArticleByURLMain = ({ newArticle }) => {
                             <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                 <dt className="text-sm font-medium text-gray-500">Extracted Text</dt>
                                 <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                                    {newArticle.text}
+                                    <textarea
+                                        id='ImgToTextResultTextArea'
+                                        readOnly
+                                        className="w-full bg-gray-50"
+                                        value={content}
+                                        style={{ height: height }}
+                                    />
                                 </dd>
                             </div>
 

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import BgBlurSvg from '../../../assets/BgBlurSvg'
 import BgBlurSvgTop from '../../../assets/BgBlurSvgTop'
 import { TextToAudio } from '../../../repository/TextToSpeech'
+import { languages } from '../../../util/Languages'
 
 const TextToSpeech = () => {
     const [text, setText] = useState('')
+    const [country, setcountry] = useState('en')
     const [audio, setAudio] = useState()
     const [isLoading, setisLoading] = useState(false)
 
@@ -15,10 +17,10 @@ const TextToSpeech = () => {
     const textToAudioHandler = async (event) => {
         event.preventDefault()
         setisLoading(true)
-        await TextToAudio(text, setAudio)
+        await TextToAudio(text, setAudio, country)
         console.log(audio);
     }
-
+    console.log(country);
     return (
         <div className='TextToSpeech relative isolate min-h-screen overflow-y-hidden bg-slate-900 flex flex-col items-center py-32 gap-10 '>
             <div className='ArticleByURLHeader flex flex-col gap-10 items-center max-w-3xl w-full'>
@@ -36,6 +38,16 @@ const TextToSpeech = () => {
                             placeholder='Write smth'
                             onChange={(e) => setText(e.target.value)}
                         />
+
+                        <select className="form-select p-2 rounded-md"
+                            id="country"
+                            onChange={(e) => setcountry(e.target.value)}
+                        >
+                            {languages.map((item, id) => (
+                                <option key={id} value={item.code}>{item.name}</option>
+                            ))}
+                        </select>
+
                         {!isLoading ? <input type="submit"
                             value={'Convert'}
                             className="rounded-md cursor-pointer bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"

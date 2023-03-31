@@ -5,6 +5,7 @@ import Home from "./components/pages/home/Home";
 import Summarize from "./components/pages/summarize/Summarize";
 import TextToSpeech from "./components/pages/textToSpeech/TextToSpeech";
 import Navbar from "./elements/navbar/Navbar";
+import Paraphraser from "./components/pages/paraphraser/Paraphraser";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/texttospeech" element={<TextToSpeech />} />
         <Route path="/imagetotext" element={<ArticleByURL />} />
         <Route path="/summarize" element={<Summarize />} />
+        <Route path="/paraphraser" element={<Paraphraser />} />
         
       </Routes>
     </div>

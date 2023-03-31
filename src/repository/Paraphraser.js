@@ -1,19 +1,27 @@
 import axios from "axios";
 
-//TODO Add a character limit set it 400 you have 10.000 character limit per month
-const options = {
-    method: 'POST',
-    url: 'https://rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com/rewrite',
-    headers: {
-        'content-type': 'application/json',
-        // 'X-RapidAPI-Key': process.env.REACT_APP_TOOL_API,
-        'X-RapidAPI-Host': 'rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com'
-    },
-    data: '{"language":"en","strength":3,"text":"Begin this day, remembering that not everyone got the opportunity to wake up from their sleep this morning. The mere fact that you can witness this beautiful day in good health is the biggest sign that you have been abundantly blessed. Blessings"}'
-};
+export const paraphraser = async (text, setParaphrasedText) => {
+    //TODO Add a character limit set it 400 you have 10.000 character limit per month
+    const encodedParams = new URLSearchParams();
+    encodedParams.append("text", `${text}`);
+    encodedParams.append("unique", "true");
+    encodedParams.append("mode", "fluent");
 
-axios.request(options).then(function (response) {
-    console.log(response.data);
-}).catch(function (error) {
-    console.error(error);
-});
+    const optionsPOST = {
+        method: 'POST',
+        url: 'https://best-paraphrasing-api.p.rapidapi.com/rewriter',
+        params: {
+            text: `${text}`,
+            unique: 'true'
+        },
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'X-RapidAPI-Key': process.env.REACT_APP_TOOL_API,
+            'X-RapidAPI-Host': 'best-paraphrasing-api.p.rapidapi.com'
+        },
+        data: encodedParams
+    };
+
+    const postNewParaphrased = await axios.request(optionsPOST)
+    setParaphrasedText(postNewParaphrased.data);
+}

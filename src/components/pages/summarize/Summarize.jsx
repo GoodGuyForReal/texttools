@@ -45,7 +45,6 @@ const Summarize = () => {
 
                 <div className='w-full md:w-1/2'>
                     <textarea
-                        readOnly
                         defaultValue={newText}
                         className="block w-full rounded-md border-0 text-gray-900 h-[90vh] p-3 resize-none"
                         placeholder='Result will be here and editible'

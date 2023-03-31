@@ -25,7 +25,7 @@ const features = [
     {
         name: 'Paraphraser',
         description:
-            'Sentiment analysis is the use of natural language processing to systematically identify and extract subjective information.',
+            'Our paraphrase feature allows you to say the same thing in a new way.',
         icon: FaceSmileIcon,
         href: '/paraphraser'
     },

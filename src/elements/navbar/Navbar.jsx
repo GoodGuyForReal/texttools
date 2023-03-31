@@ -31,7 +31,7 @@ const products = [
         description:
             'Sentiment analysis is the use of natural language processing to systematically identify and extract subjective information.',
         icon: FaceSmileIcon,
-        href: ''
+        href: '/paraphraser'
     },
 ]
 const callsToAction = [

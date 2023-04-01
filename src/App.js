@@ -6,6 +6,7 @@ import Summarize from "./components/pages/summarize/Summarize";
 import TextToSpeech from "./components/pages/textToSpeech/TextToSpeech";
 import Navbar from "./elements/navbar/Navbar";
 import Paraphraser from "./components/pages/paraphraser/Paraphraser";
+import About from "./components/pages/about/About";
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path="/about" element={<About />} />
         <Route path="/texttospeech" element={<TextToSpeech />} />
         <Route path="/imagetotext" element={<ArticleByURL />} />
         <Route path="/summarize" element={<Summarize />} />
         <Route path="/paraphraser" element={<Paraphraser />} />
-        
+
       </Routes>
     </div>
   );

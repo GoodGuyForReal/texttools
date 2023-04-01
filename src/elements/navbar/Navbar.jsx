@@ -100,7 +100,7 @@ export default function Navbar() {
                         </Transition>
                     </Popover>
 
-                    <Link to="#" className="text-sm font-semibold leading-6 text-white">
+                    <Link to="/about" className="text-sm font-semibold leading-6 text-white">
                         About
                     </Link>
                 </Popover.Group>

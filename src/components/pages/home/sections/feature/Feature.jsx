@@ -33,15 +33,19 @@ const features = [
 
 export default function Feature() {
     return (
-        <div className="bg-slate-900 py-24 sm:py-32">
+        <div className="bg-slate-900 py-24 sm:py-32" id='feature'>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl lg:text-center">
-                    <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
+                    <div className="hidden sm:mb-4 sm:flex sm:justify-center">
+                        <p className="relative rounded-full py-1 px-4 text-sm leading-6 text-white ring-1 ring-indigo-600/50">
+                            Work faster
+                        </p>
+                    </div>
                     <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                         Text Tools to Simplify Your Work
                     </p>
                     <p className="mt-6 text-lg leading-8 text-slate-400">
-                    Our text tools simplify your text-related tasks, saving you time and effort. With features like text-to-speech and text summarization, you can work smarter, not harder.
+                        Our text tools simplify your text-related tasks, saving you time and effort. With features like text-to-speech and text summarization, you can work smarter, not harder.
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

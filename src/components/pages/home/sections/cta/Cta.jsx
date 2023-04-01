@@ -1,3 +1,6 @@
+import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
+
 export default function Cta() {
   return (
     <div className="Cta">
@@ -26,15 +29,19 @@ export default function Cta() {
               Try out our powerful text tools today and see how they can help you work more efficiently. With just a few clicks, you can transform text into speech, summarize long articles, and extract valuable information from images.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <a
-                href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              <Link
+                className="rounded-md cursor-pointer bg-indigo-600 px-9 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                to="feature"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
               >
                 Get started
-              </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+              </Link>
+              <NavLink to='/about' className="text-sm cursor-pointer font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
-              </a>
+              </NavLink>
             </div>
           </div>
           <div className="relative mt-16 h-80 lg:mt-8">

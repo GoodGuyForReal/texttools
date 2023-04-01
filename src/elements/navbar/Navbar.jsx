@@ -81,7 +81,7 @@ export default function Navbar() {
                                     {products.map((item) => (
                                         <div
                                             key={item.name}
-                                            className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-purple-100 duration-200"
+                                            className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-100 duration-200"
                                         >
                                             <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                                 <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
@@ -134,13 +134,16 @@ export default function Navbar() {
                                     <div key={id}>
                                         <Link
                                             to={item.href}
-                                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-100"
                                         >
                                             {item.name}
                                         </Link>
                                     </div>
                                 ))
                                 }
+                                <Link to="/about" className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-100">
+                                    About
+                                </Link>
                             </div>
                         </div>
                     </div>

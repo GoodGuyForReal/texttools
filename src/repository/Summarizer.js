@@ -10,7 +10,7 @@ export const Summarizer = async (text) => {
             'X-RapidAPI-Key': process.env.REACT_APP_TOOL_API,
             'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
         },
-        data: `{"language":"english","summary_percent":10,"text":"${fixedText}"}`
+        data: `{"language":"english","summary_percent":30,"text":"${fixedText}"}`
     };
 
     const getNewSummarizer = await axios.request(options)

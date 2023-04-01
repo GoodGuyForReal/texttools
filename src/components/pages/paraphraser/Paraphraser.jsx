@@ -15,8 +15,13 @@ const ParaphraserText = () => {
 
     const paraphraserHandler = (e) => {
         e.preventDefault()
-        setisLoading(true)
-        paraphraser(text, setParaphrasedText)
+        if (text.length <= 300) {
+            setisLoading(true)
+            paraphraser(text, setParaphrasedText)
+        }else{
+            alert('text must be shorter than 300 character')
+        }
+
     }
     console.log(paraphrasedText);
 
@@ -36,7 +41,7 @@ const ParaphraserText = () => {
                         <form onSubmit={paraphraserHandler} className='w-full max-w-3xl flex flex-col items-center justify-center'>
 
                             <div className='w-full flex justify-end'>
-                                <p className='text-white/50'>character: {text.length}</p>
+                                <p className='text-white/50'>{text.length}/300</p>
                             </div>
 
                             <div className="w-full flex flex-col items-center justify-center gap-5">
@@ -66,7 +71,7 @@ const ParaphraserText = () => {
 
                     <div className='w-full md:w-1/2 pt-6'>
                         <textarea
-                            defaultValue={paraphrasedText?.rewrited}
+                            defaultValue={paraphrasedText?.rewrite}
                             className="block w-full rounded-md border-0 text-gray-900 min-h-[40vh] p-3 resize-none"
                             placeholder='Result will be here and editible'
                         />
